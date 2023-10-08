@@ -3,6 +3,8 @@
 
 #lang sicp
 
+(#%require rackunit)
+
 (define (square x) (* x x))
 
 (define (sumOfSquares x y) 
@@ -17,10 +19,11 @@
         ((and (<= y x) (<= y z)) (sumOfSquares x z))
         (else (sumOfSquares x y))))
 
-(sumOfLargestTwoSquares 1 2 3) ;13 
-(sumOfLargestTwoSquares 3 2 1) ;13 
-(sumOfLargestTwoSquares 1 3 2) ;13 
-(sumOfLargestTwoSquares 2 2 2) ;8 
-(sumOfLargestTwoSquares 1 2 2) ;8 
-(sumOfLargestTwoSquares 1 1 2) ;5 
-(sumOfLargestTwoSquares 4 2 3) ;25    
+(check-equal? (sumOfLargestTwoSquares 1 2 3) 13)
+(check-equal? (sumOfLargestTwoSquares 3 2 1) 13)
+(check-equal? (sumOfLargestTwoSquares 1 3 2) 13)
+(check-equal? (sumOfLargestTwoSquares 2 2 2) 8)
+(check-equal? (sumOfLargestTwoSquares 1 2 2) 8)
+(check-equal? (sumOfLargestTwoSquares 1 1 2) 5)
+(check-equal? (sumOfLargestTwoSquares 4 2 3) 25)
+

@@ -21,15 +21,14 @@
 
 #lang sicp
 
+(#%require rackunit)
+
 (define (new-if predicate then-clause  else-clause)
   (cond (predicate then-clause)
         (else else-clause)))
 
-(new-if (= 2 3) 0 5)
-; 5
-
-(new-if (= 1 1) 0 5)
-; 0
+(check-equal? (new-if (= 2 3) 0 5) 5)
+(check-equal? (new-if (= 1 1) 0 5) 0)
 
 (define (good-enough? guess x)
     (< (abs (- (* guess guess) x)) 0.001))

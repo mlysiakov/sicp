@@ -4,6 +4,8 @@
 
 #lang sicp
 
+(#%require rackunit)
+
 (define (square x) (* x x)) 
 
 (define (good-enough? old-guess new-guess)
@@ -22,14 +24,7 @@
   (sqrt-iter 1.0 2.0 x))   
 
 
-(sqrt-cube 27)
-; 3.001274406506175
-
-(sqrt-cube (+ 100 37))
-; 5.1552597174244825
-
-(sqrt-cube (+ (sqrt-cube 2) (sqrt-cube 3)))
-; 1.3932442408130556
-
-(* (sqrt-cube 1000) (sqrt-cube 1000))
-; 100.02410863964595  
+(check-equal? (sqrt-cube 27) 3.001274406506175)
+(check-equal? (sqrt-cube (+ 100 37)) 5.1552597174244825)
+(check-equal? (sqrt-cube (+ (sqrt-cube 2) (sqrt-cube 3))) 1.3932442408130556)
+(check-equal? (* (sqrt-cube 1000) (sqrt-cube 1000)) 100.02410863964595 )

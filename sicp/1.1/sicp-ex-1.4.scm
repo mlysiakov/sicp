@@ -4,13 +4,16 @@
 
 #lang sicp
 
+(#%require rackunit)
+
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
 
-(a-plus-abs-b 3 1)   ;4
-(a-plus-abs-b 3 -1)  ;4
-(a-plus-abs-b -3 1)  ;-2
-(a-plus-abs-b -3 -1) ;-2
+(check-equal? (a-plus-abs-b 3 1) 4)
+(check-equal? (a-plus-abs-b 3 -1) 4)
+(check-equal? (a-plus-abs-b -3 1) -2)
+(check-equal? (a-plus-abs-b -3 -1) -2)
+
 
 ; Operators could be a compound expression itself. 
 ; Combination `(if (> b 0) + -)` whill result in `+` when b positive and `-` when b negative

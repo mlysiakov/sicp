@@ -2,6 +2,8 @@
 
 #lang sicp
 
+(#%require rackunit)
+
 (define (good-enough? guess x)
     (< (abs (- (* guess guess) x)) 0.001))
 
@@ -20,14 +22,8 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))        
 
-(sqrt 9)
-; 3.00009155413138
 
-(sqrt (+ 100 37))
-; 11.704699917758145
-
-(sqrt (+ (sqrt 2) (sqrt 3)))
-; 1.7739279023207892
-
-(* (sqrt 1000) (sqrt 1000))
-; 1000.000369924366        
+(check-equal? (sqrt 9) 3.00009155413138)
+(check-equal? (sqrt (+ 100 37)) 11.704699917758145)
+(check-equal? (sqrt (+ (sqrt 2) (sqrt 3))) 1.7739279023207892)
+(check-equal? (* (sqrt 1000) (sqrt 1000)) 1000.000369924366 )

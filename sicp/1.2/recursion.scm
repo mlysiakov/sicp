@@ -1,14 +1,13 @@
 #lang sicp 
 
+(#%require rackunit)
+
 (define (factorial_simple n)
     (if (= n 1) 
         1 
         (* n (factorial_simple(- n 1)))
     )
 )
-
-
-(factorial_simple 6) ;720
 
 (define (factorial_iter_recursive n)
     (factorial_iter 1 1 n))
@@ -20,7 +19,9 @@
     )
 )
 
-(factorial_iter_recursive 6) ;720
+(check-equal? (factorial_simple 6) 720)
+(check-equal? (factorial_iter_recursive 6) 720)
+
 
 (define (fibonacci n)
     (cond
@@ -31,7 +32,7 @@
     )
 )
 
-(fibonacci 10)
+(provide fibonacci)
 
 (define (fibonacci_iterative n)
     (fibonacci_iteration 1 0 n) )
@@ -41,4 +42,6 @@
         b
         (fibonacci_iteration (+ a b) a (- counter 1))))    
 
-(fibonacci_iterative 10)
+(check-equal? (fibonacci 10) 55)
+(check-equal? (fibonacci_iterative 10) 55)
+
