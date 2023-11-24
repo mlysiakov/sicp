@@ -32,8 +32,6 @@
     )
 )
 
-(provide fibonacci)
-
 (define (fibonacci_iterative n)
     (fibonacci_iteration 1 0 n) )
 

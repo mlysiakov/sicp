@@ -5,7 +5,7 @@
 1. Work through [SICP](https://sarabander.github.io/sicp/html/index.xhtml) book
 2. Watch Brian Harvey's lectures [SICP lectures](https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=title)
 3. Reflect on material with virtual [meetups](https://www.youtube.com/playlist?list=PLVFrD1dmDdvdvWFK8brOVNL7bKHpE-9w0)
-4. Write down notes and solve execrices in this repository 
+4. Write down notes and solve exercises in this repository 
 
 
 ## Notes
